@@ -8,5 +8,5 @@ abstract class IHomeModelService{
   IHomeModelService({required this.homeModelManager});
 
 
-  Future<List<Data>> fetchHomeModelData({int size=0});
+  Future<List<HomeModel>> fetchHomeModelData({int size=0});
 }

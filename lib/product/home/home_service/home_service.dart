@@ -8,10 +8,14 @@ class HomeService extends IHomeModelService {
   HomeService(Dio manager) : super(homeModelManager: manager);
 
   @override
-  Future<List<Data>> fetchHomeModelData({int size = 0}) async {
-    var response =await  homeModelManager.get(HomeRoute.BASE.returnValue,
+  Future<List<HomeModel>> fetchHomeModelData({int size = 0}) async {
+    var response = await homeModelManager.get(HomeRoute.BASE.returnValue,
         queryParameters: Map.fromEntries([HomeQuerry.SIZE.pageQuery(size)]));
 
-    return response.data;
+    if (response.data != null) {
+      return response.data;
+    }else{
+      return [];
+    }
   }
 }
