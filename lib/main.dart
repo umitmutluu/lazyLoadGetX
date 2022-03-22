@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lazyloadgetx/product/home/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,8 +40,6 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child:ListView.builder(itemBuilder: (context,index)=>ListTile())
-    );
+      body: HomeView());
   }
 }
